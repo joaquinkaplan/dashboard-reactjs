@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
   const [isClicked, setIsClicked] = useState(initialState);
   const [currentColor, setCurrentColor] = useState("#03C9D7");
   const [currentMode, setCurrentMode] = useState("Light");
-  const [themeSettings, setThemeSettings] = useState(true);
+  const [themeSettings, setThemeSettings] = useState(false);
 
   const setMode = (e) => {
     setCurrentMode(e.target.value);
