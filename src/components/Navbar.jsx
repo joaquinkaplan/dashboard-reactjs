@@ -33,7 +33,6 @@ const Navbar = () => {
     setActiveMenu,
     handleClick,
     isClicked,
-    setIsClicked,
     screenSize,
     setScreenSize,
     currentColor,
@@ -47,7 +46,7 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setScreenSize]);
 
   useEffect(() => {
     if (screenSize <= 900) {
@@ -55,7 +54,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  }, [screenSize, setActiveMenu]);
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
   return (
@@ -100,7 +99,7 @@ const Navbar = () => {
             <p>
               <span className="text-gray-400 text-14">Hi,</span>{" "}
               <span className="text-gray-400 font-bold ml-1 text-14">
-                Michael
+                Joaquin
               </span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
