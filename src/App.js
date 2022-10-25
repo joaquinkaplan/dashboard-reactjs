@@ -26,7 +26,8 @@ import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  const { activeMenu, currentColor } = useStateContext();
+  const { activeMenu, currentColor, themeSettings, setThemeSettings } =
+    useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -35,7 +36,7 @@ const App = () => {
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
-                onClick={{}}
+                onClick={() => setThemeSettings(true)}
                 style={{ background: currentColor, borderRadius: "50%" }}
                 className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
               >
@@ -63,7 +64,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
-              {/* {themeSettings && <ThemeSettings />} */}
+              {themeSettings && <ThemeSettings />}
 
               <Routes>
                 {/* dashboard  */}
